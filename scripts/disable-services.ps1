@@ -8,26 +8,32 @@ $services = @(
     "dmwappushservice"                         # WAP Push Message Routing Service (see known issues)
     "HomeGroupListener"                        # HomeGroup Listener
     "HomeGroupProvider"                        # HomeGroup Provider
+    # Keep enabled to use geolocation software
     "lfsvc"                                    # Geolocation Service
+    # Windows service for application access to downloaded maps, disabling this service will prevent apps from accessing maps.
     "MapsBroker"                               # Downloaded Maps Manager
     "NetTcpPortSharing"                        # Net.Tcp Port Sharing Service
+    # Keep enabled for remote access, configuring a VPN, accessing your files via VPN, etc.
     "RemoteAccess"                             # Routing and Remote Access
     "RemoteRegistry"                           # Remote Registry
     "SharedAccess"                             # Internet Connection Sharing (ICS)
-    "TrkWks"                                   # Distributed Link Tracking Client
+    # Keep enabled to keep track of folders with shortcuts. If the folder is moved, the service re-link the shortcut to new location.
+    #"TrkWks"                                  # Distributed Link Tracking Client
     "WbioSrvc"                                 # Windows Biometric Service (required for Fingerprint reader / facial detection)
+    # Keep enabled to use Bluetooth
     #"WlanSvc"                                 # WLAN AutoConfig
     #"NcdAutoSetup"                            # Network Connected Devices Auto-Setup
     #"bthserv"                                 # Bluetooth Support Service
     #"BthAvctpSvc"                             # AVCTP service Audio Video Control Transport Protocol service (BT)
     #"BTAGService"                             # Bluetooth Audio Gateway Service
     "WMPNetworkSvc"                            # Windows Media Player Network Sharing Service
-    "wscsvc"                                   # Windows Security Center Service
+    #"wscsvc"                                  # Windows Security Center Service
     "ndu"                                      # Windows Network Data Usage Monitor
-    "SSDPSRV"                                  #SSDP Discovery
-    "lltdsvc"                                  #Link-Layer Topology Discovery Mapper
-    "AXInstSV"                                 #ActiveX Installer
-    "AJRouter"                                 #AllJoyn Router Service
+    
+    #"SSDPSRV"                                 #SSDP Discovery
+    #"lltdsvc"                                 #Link-Layer Topology Discovery Mapper
+    #"AXInstSV"                                #ActiveX Installer
+    #"AJRouter"                                #AllJoyn Router Service
     "AppReadiness"                             #App Readiness
     "wlidsvc"                                  #Microsoft Account Sign-in Assistant
     "SmsRouter"                                #Microsoft Windows SMS
@@ -51,7 +57,6 @@ $services = @(
     "seclogon"                                 #Secondary Logon
     "fhsvc"                                    #File History Service
     "CscService"                               #Offline Files
-    "WbioSrvc"                                 #Windows Biometric Service
     "Wecsvc"                                   #Windows Event Collector
     "WpcMonSvc"                                #Parental Controls
     "WinRM"                                    #Windows Remote Management (WS-Management)
