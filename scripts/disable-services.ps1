@@ -6,62 +6,81 @@ $services = @(
     "diagnosticshub.standardcollector.service" # Microsoft (R) Diagnostics Hub Standard Collector Service
     "DiagTrack"                                # Diagnostics Tracking Service
     "dmwappushservice"                         # WAP Push Message Routing Service (see known issues)
-    "HomeGroupListener"                        # HomeGroup Listener
-    "HomeGroupProvider"                        # HomeGroup Provider
     # Keep enabled to use geolocation software
     "lfsvc"                                    # Geolocation Service
     # Windows service for application access to downloaded maps, disabling this service will prevent apps from accessing maps.
     "MapsBroker"                               # Downloaded Maps Manager
+    # -
     "NetTcpPortSharing"                        # Net.Tcp Port Sharing Service
     # Keep enabled for remote access, configuring a VPN, accessing your files via VPN, etc.
     "RemoteAccess"                             # Routing and Remote Access
     "RemoteRegistry"                           # Remote Registry
+    # Keep these two enabled to share your Internet connection to other devices.
     "SharedAccess"                             # Internet Connection Sharing (ICS)
+    "icssvc"                                   # Windows Mobile Hotspot Service
     # Keep enabled to keep track of folders with shortcuts. If the folder is moved, the service re-link the shortcut to new location.
     #"TrkWks"                                  # Distributed Link Tracking Client
+    # -
     "WbioSrvc"                                 # Windows Biometric Service (required for Fingerprint reader / facial detection)
-    # Keep enabled to use Bluetooth
     #"WlanSvc"                                 # WLAN AutoConfig
+    "WMPNetworkSvc"                            # Windows Media Player Network Sharing Service
+    #"wscsvc"                                  # Windows Security Center Service
+    #"WSearch"                                 # Windows Search
+    # Leave Xbox stuff for gaming
+    #"XblAuthManager"                          # Xbox Live Auth Manager
+    #"XblGameSave"                             # Xbox Live Game Save
+    #"XboxNetApiSvc"                           # Xbox Net Api
+    #"XboxGipSvc"                              # Xbox Accessory Management Service
+    # -
+    "ndu"                                      # Windows Network Data Usage Monitor
+    # Services which cannot be disabled
+    #"WdNisSvc"
+    # -
+    # -
+    # NEW ADDITIONS WITH RESPECT TO W4RH4WK SCRIPT FROM THIS LINE:
+    "HomeGroupListener"                        # HomeGroup Listener
+    "HomeGroupProvider"                        # HomeGroup Provider
     #"NcdAutoSetup"                            # Network Connected Devices Auto-Setup
+    # Keep enabled to use Bluetooth
     #"bthserv"                                 # Bluetooth Support Service
     #"BthAvctpSvc"                             # AVCTP service Audio Video Control Transport Protocol service (BT)
     #"BTAGService"                             # Bluetooth Audio Gateway Service
-    "WMPNetworkSvc"                            # Windows Media Player Network Sharing Service
-    #"wscsvc"                                  # Windows Security Center Service
-    "ndu"                                      # Windows Network Data Usage Monitor
-    
+    # UPnP-related stuff
     #"SSDPSRV"                                 #SSDP Discovery
+    #"upnphost"                                #UPnP Device Host
+    # -
     #"lltdsvc"                                 #Link-Layer Topology Discovery Mapper
     #"AXInstSV"                                #ActiveX Installer
-    #"AJRouter"                                #AllJoyn Router Service
-    "AppReadiness"                             #App Readiness
-    "wlidsvc"                                  #Microsoft Account Sign-in Assistant
+    "AJRouter"                                 #AllJoyn Router Service
+    #"AppReadiness"                            #App Readiness
+    # Keep enabled to use a Microsoft account in your Windows user.
+    #"wlidsvc"                                 #Microsoft Account Sign-in Assistant
+    # -
     "SmsRouter"                                #Microsoft Windows SMS
-    "NcdAutoSetup"                             #Network Connected Devicees Auto-Setup
-    "PNRPsvc"                                  #Peer Name Resolution Protocol
-    "p2psvc"                                   #Peer Networking Group
-    "p2pimsvc"                                 #Peer Networking Identity Manager
-    "PNRPAutoReg"                              #PNRP Machine Name Publication Service
-    "WalletService"                            #WalletService
-    "WMPNetworkSvc"                            #Windows Media Player Network Sharing Service
-    "icssvc"                                   #Internet Connection Sharing Service
-    "XblAuthManager"                           #Xbox Live Auth Manager
-    "XblGameSave"                              #Xbox Live Game Save
-    "XboxNetApiSvc"                            #Xbox Net Api
-    "XboxGipSvc"                               #Xbox Accessory Management Service
-    "DmEnrollmentSvc"                          #Device Management Enrollment Service
+    #"PNRPsvc"                                 #Peer Name Resolution Protocol
+    #"p2psvc"                                  #Peer Networking Group
+    #"p2pimsvc"                                #Peer Networking Identity Manager
+    #"PNRPAutoReg"                             #PNRP Machine Name Publication Service
+    #"WalletService"                           #WalletService
+    #"DmEnrollmentSvc"                         #Device Management Enrollment Service
     "RetailDemo"                               #Retail Demo
-    "LanmanServer"                             #File Print Network Sharing
-    "LanmanWorkstation"                        #Workstation - Remote Server SMB
-    "LanmanServer"                             #Server
+    #"LanmanServer"                            #Supports file, print, and named-pipe sharing over the network for your computer.
+    #"LanmanWorkstation"                       #Workstation - Remote Server SMB
+    # https://www.windows-security.org/windows-service/secondary-logon
     "seclogon"                                 #Secondary Logon
-    "fhsvc"                                    #File History Service
+    # Keep enabled to make backups of your files in a drive (Settings -> Updates and security -> Backup).
+    #"fhsvc"                                   #File History Service
+    #"wbengine"                                #Block Level Backup Engine Service (Used by Windows Backup)
+    #"SDRSVC"                                  #Windows Backup
+    # Makes network files available in local when the network connection is unavailable (mobsync -> Manage offline files).
     "CscService"                               #Offline Files
-    "Wecsvc"                                   #Windows Event Collector
-    "WpcMonSvc"                                #Parental Controls
+    # Server-related stuff (WS-Management)
     "WinRM"                                    #Windows Remote Management (WS-Management)
-    "wcncsvc"                                  #Windows Connect Now
-    "wbengine"                                 #Block Level Backup Engine Service
+    "Wecsvc"                                   #Windows Event Collector
+    # -
+    "WpcMonSvc"                                #Parental Controls
+    #"wcncsvc"                                 #Windows Connect Now - Config Registrar
+    # Virtualization environment of Microsoft.
     "vmicvss"                                  #Hyper-V Volume Shadow Copy Requestor
     "vmicvmsession"                            #Hyper-V PowerShell Direct Service
     "vmictimesync"                             #Hyper-V Time Synchronization Service
@@ -72,26 +91,28 @@ $services = @(
     "vmicguestinterface"                       #Hyper-V Guest Service Interface
     "HvHost"                                   #HV Host Service
     "AppVClient"                               #Microsoft App-V Client
-    "upnphost"                                 #UPnP Device Host
     "UevAgentService"                          #User Experience Virtualization Service
-    "TrkWks"                                   #Distributed Link Tracking Client
+    # -
     "TapiSrv"                                  #Telephony (API)
-    "swprv"                                    #Microsoft Software Shadow Copy Provider
-    "stisvc"                                   #Windows Image Acquisition (WIA)
+    #"swprv"                                   #Microsoft Software Shadow Copy Provider
+    #"stisvc"                                  #Windows Image Acquisition (WIA)
     "SNMPTRAP"                                 #SNMP Trap
     "smphost"                                  #Microsoft Storage Spaces SMP
     "SensrSvc"                                 #Sensor Monitoring Service
-    "Sense"                                    #Windows Defender Advanced Threat Protection Service
     "SEMgrSvc"                                 #Payments and NFC/SE Manager
-    "SDRSVC"                                   #Windows Backup
-    "SCPolicySvc"                              #Smart Card Removal Policy
-    "ScDeviceEnum"                             #Smart Card Device Enumeration Service
-    "SCardSvr"                                 #Smart Card
+    # Keep enabled if you use smart card logins, or electronic certificates depending on national IDs.
+    #"SCPolicySvc"                             #Smart Card Removal Policy
+    #"ScDeviceEnum"                            #Smart Card Device Enumeration Service
+    #"SCardSvr"                                #Smart Card
+    # -
+    # Keep enabled for VPN, DNS, etc. connections.
     "RasMan"                                   #Remote Access Connection Manager
     "RasAuto"                                  #Remote Access Auto Connection Manager
+    # -
     "PushToInstall"                            #Windows PushToInstall Service
-    "PolicyAgent"                              #IPsec Policy Agent
+    #"PolicyAgent"                             #IPsec Policy Agent
     "PhoneSvc"                                 #Phone Service
+    
     "PeerDistSvc"                              #BranchCache
     "NVDisplay.ContainerLocalSystem"           #Container service for NVIDIA root features
     "NvContainerNetworkService"                #Container service for NVIDIA network features
@@ -137,9 +158,6 @@ $services = @(
     "OneSyncSvc"                               #hidden services that apparently register and start a subprocess per user as a service
     "WpnUserService"                           #hidden services that apparently register and start a subprocess per user as a service
     "UnistoreSvc"                              #hidden services that apparently register and start a subprocess per user as a service
-    
-    # Services which cannot be disabled
-    #"WdNisSvc"
 )
 
 foreach ($service in $services) {
