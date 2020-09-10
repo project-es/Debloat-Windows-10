@@ -4,8 +4,8 @@
 
 $services = @(
     "diagnosticshub.standardcollector.service" # Microsoft (R) Diagnostics Hub Standard Collector Service
-    "DiagTrack"                                # Diagnostics Tracking Service
-    "dmwappushservice"                         # WAP Push Message Routing Service (see known issues)
+    "DiagTrack"                                # Connected User Experiences and Telemetry
+    "dmwappushservice"                         # Device Management Wireless Application Protocol (WAP) Push message Routing Service (see known issues)
     # Keep enabled to use geolocation software
     "lfsvc"                                    # Geolocation Service
     # Windows service for application access to downloaded maps, disabling this service will prevent apps from accessing maps.
@@ -23,7 +23,7 @@ $services = @(
     #"XblGameSave"                             # Xbox Live Game Save
     #"XboxNetApiSvc"                           # Xbox Net Api
     #"XboxGipSvc"                              # Xbox Accessory Management Service
-    # -
+    
     "NetTcpPortSharing"                        # Net.Tcp Port Sharing Service
     "WbioSrvc"                                 # Windows Biometric Service (required for Fingerprint reader / facial detection)
     "NaturalAuthentication"                    #Natural Authentication evaluates signals based on time, network, geolocation, bluetooth
@@ -34,6 +34,7 @@ $services = @(
     "ndu"                                      # Windows Network Data Usage Monitor
     # Services which cannot be disabled
     #"WdNisSvc"
+    
     
     # NEW ADDITIONS WITH RESPECT TO W4RH4WK SCRIPT FROM THIS LINE:
     # Keep enabled to use a Microsoft account in your Windows user.
@@ -54,36 +55,19 @@ $services = @(
     "WinRM"                                    #Windows Remote Management (WS-Management)
     "Wecsvc"                                   #Windows Event Collector
     # Keep enabled for VPN, DNS, etc. connections.
-    "RasMan"                                   #Remote Access Connection Manager
-    "RasAuto"                                  #Remote Access Auto Connection Manager
+    #"RasMan"                                  #Remote Access Connection Manager
+    #"RasAuto"                                 #Remote Access Auto Connection Manager
     # Keep enabled if you use IPv6
     "IpxlatCfgSvc"                             #IP Translation Configuration Service from v4 to v6 and vice versa
     "iphlpsvc"                                 #IP Helper (6to4, ISATAP, Port Proxy, and Teredo), and IP-HTTPS. 
-    # -
-    "HomeGroupListener"                        # HomeGroup Listener
-    "HomeGroupProvider"                        # HomeGroup Provider
-    #"NcdAutoSetup"                            # Network Connected Devices Auto-Setup
-    #"lltdsvc"                                 #Link-Layer Topology Discovery Mapper
-    #"AXInstSV"                                #ActiveX Installer
-    "AJRouter"                                 #AllJoyn Router Service
-    #"AppReadiness"                            #App Readiness
-    "SmsRouter"                                #Microsoft Windows SMS
-    #"PNRPsvc"                                 #Peer Name Resolution Protocol
-    #"p2psvc"                                  #Peer Networking Group
-    #"p2pimsvc"                                #Peer Networking Identity Manager
-    #"PNRPAutoReg"                             #PNRP Machine Name Publication Service
-    #"WalletService"                           #WalletService
-    #"DmEnrollmentSvc"                         #Device Management Enrollment Service
-    "RetailDemo"                               #Retail Demo
-    #"LanmanServer"                            #Supports file, print, and named-pipe sharing over the network for your computer.
-    #"LanmanWorkstation"                       #Workstation - Remote Server SMB
-    #"lmhosts"                                 #TCP/IP NetBIOS Helper
-    # https://www.windows-security.org/windows-service/secondary-logon
-    "seclogon"                                 #Secondary Logon
     # Keep enabled to make backups of your files in a drive (Settings -> Updates and security -> Backup).
     #"fhsvc"                                   #File History Service
     #"wbengine"                                #Block Level Backup Engine Service (Used by Windows Backup)
     #"SDRSVC"                                  #Windows Backup
+    # Keep enabled if you use smart card logins, or electronic certificates depending on national IDs.
+    #"SCPolicySvc"                             #Smart Card Removal Policy
+    #"ScDeviceEnum"                            #Smart Card Device Enumeration Service
+    #"SCardSvr"                                #Smart Card
     # Keep enabled to use Bitlocker encryption service.
     #"BDESVC"                                  #BitLocker Drive Encryption Service
     # Makes network files available in local when the network connection is unavailable (mobsync -> Manage offline files).
@@ -102,41 +86,55 @@ $services = @(
     "HvHost"                                   #HV Host Service
     "AppVClient"                               #Microsoft App-V Client
     "UevAgentService"                          #User Experience Virtualization Service
-    # -
-    "WpcMonSvc"                                #Parental Controls
-    #"wcncsvc"                                 #Windows Connect Now - Config Registrar
-    "TapiSrv"                                  #Telephony (API)
-    #"swprv"                                   #Microsoft Software Shadow Copy Provider
-    #"stisvc"                                  #Windows Image Acquisition (WIA)
-    "SNMPTRAP"                                 #SNMP Trap
-    "smphost"                                  #Microsoft Storage Spaces SMP
-    "SensrSvc"                                 #Sensor Monitoring Service
-    "SEMgrSvc"                                 #Payments and NFC/SE Manager
-    # Keep enabled if you use smart card logins, or electronic certificates depending on national IDs.
-    #"SCPolicySvc"                             #Smart Card Removal Policy
-    #"ScDeviceEnum"                            #Smart Card Device Enumeration Service
-    #"SCardSvr"                                #Smart Card
-    # -
-    "PushToInstall"                            #Windows PushToInstall Service
-    #"PolicyAgent"                             #IPsec Policy Agent
-    "PhoneSvc"                                 #Phone Service
-    "PeerDistSvc"                              #BranchCache
+    # https://www.windows-security.org/windows-service/secondary-logon
+    "seclogon"                                 #Secondary Logon
+    # Keep enabled to use Microsoft Store
+    #"InstallService"                          #Microsoft Store Install Service
+    #"LicenseManager"                          #Windows License Manager Service (Used by Microsoft Store)
+    
+    "AJRouter"                                 #AllJoyn Router Service
+    #"AppReadiness"                            #App Readiness
+    #"AXInstSV"                                #ActiveX Installer
+    #"cbdhsvc"                                 #Clipboard User Service
+    #"DmEnrollmentSvc"                         #Device Management Enrollment Service
+    #"DsSvc"                                   #Data Sharing Service
+    #"embeddedmode"                            #Embedded Mode service enables scenarios related to Background Applications
+    #"FontCache"                               #Windows Font Cache Service
+    "FrameServer"                              #Windows Camera Frame Server (Could be needed to capture webcam frames).
+    #"IKEEXT"                                  #IKE and AuthIP IPsec Keying Modules
+    "irmon"                                    #Infrared monitor service (File transfer via infrared devices)
+    #"LanmanServer"                            #Supports file, print, and named-pipe sharing over the network for your computer.
+    #"LanmanWorkstation"                       #Workstation - Remote Server SMB
+    #"lltdsvc"                                 #Link-Layer Topology Discovery Mapper
+    #"lmhosts"                                 #TCP/IP NetBIOS Helper
+    "MSiSCSI"                                  #Microsoft iSCSI Initiator Service
+    #"NcdAutoSetup"                            # Network Connected Devices Auto-Setup
     #"NVDisplay.ContainerLocalSystem"          #Container service for NVIDIA root features
     #"NvContainerNetworkService"               #Container service for NVIDIA network features
     #"NvContainerLocalSystem"                  #Container service for NVIDIA root features
-    "MSiSCSI"                                  #Microsoft iSCSI Initiator Service
-    #"InstallService"                          #Microsoft Store Install Service
-    #"LicenseManager"                          #Windows License Manager Service (Used by Microsoft Store)
-    #"ITBMService"                             #Intel(R) Turbo Boost Max 3.0 Technology Application Service
-    "irmon"                                    #Infrared monitor service (File transfer via infrared devices)
-    #"IKEEXT"                                  #IKE and AuthIP IPsec Keying Modules
-    "FrameServer"                              #Windows Camera Frame Server (Could be needed to capture webcam frames).
-    #"FontCache"                               #Windows Font Cache Service
-    #"embeddedmode"                            #Embedded Mode service enables scenarios related to Background Applications
-    #"DsSvc"                                   #Data Sharing Service
-    #"Browser"                                 #unknown
-    #"cbdhsvc"                                 #Clipboard User Service
+    "PeerDistSvc"                              #BranchCache
+    "PhoneSvc"                                 #Phone Service
+    #"p2psvc"                                  #Peer Networking Group
+    #"p2pimsvc"                                #Peer Networking Identity Manager
+    #"PNRPAutoReg"                             #PNRP Machine Name Publication Service
+    #"PNRPsvc"                                 #Peer Name Resolution Protocol
+    #"PolicyAgent"                             #IPsec Policy Agent
+    "PushToInstall"                            #Windows PushToInstall Service
+    "RetailDemo"                               #Retail Demo
+    "SensrSvc"                                 #Sensor Monitoring Service
+    "SEMgrSvc"                                 #Payments and NFC/SE Manager
+    "SmsRouter"                                #Microsoft Windows SMS
+    "smphost"                                  #Microsoft Storage Spaces SMP
+    "SNMPTRAP"                                 #SNMP Trap
+    #"stisvc"                                  #Windows Image Acquisition (WIA)
+    #"swprv"                                   #Microsoft Software Shadow Copy Provider
+    "TapiSrv"                                  #Telephony (API)
+    #"WalletService"                           #WalletService
+    #"wcncsvc"                                 #Windows Connect Now - Config Registrar
+    "WpcMonSvc"                                #Parental Controls
+    
     #"ConsentUxUserSvc"                        #Allows ConnectUX and PC Settings to Connect and Pair with WiFi displays and Bluetooth devices.
+
     # Services that appear to start a process per users in the system:
     #"DevicesFlowUserSvc"                      #Allows ConnectUX and PC Settings to Connect and Pair with WiFi displays and Bluetooth devices.
     "UnistackSvcGroup"                         #hidden services that apparently register and start a subprocess per user as a service
