@@ -1,6 +1,10 @@
 #   Description:
 # This script disables unwanted Windows services. If you do not want to disable
 # certain services comment out the corresponding lines below.
+# Based on:
+# http://www.blackviper.com/service-configurations/black-vipers-windows-10-service-configurations/
+# http://batcmd.com/windows/10/services/
+
 
 $services = @(
     "diagnosticshub.standardcollector.service" # Microsoft (R) Diagnostics Hub Standard Collector Service
