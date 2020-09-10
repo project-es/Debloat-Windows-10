@@ -137,20 +137,21 @@ $services = @(
     #"Browser"                                 #unknown
     #"cbdhsvc"                                 #Clipboard User Service
     #"ConsentUxUserSvc"                        #Allows ConnectUX and PC Settings to Connect and Pair with WiFi displays and Bluetooth devices.
+    # Services that appear to start a process per users in the system:
+    #"DevicesFlowUserSvc"                      #Allows ConnectUX and PC Settings to Connect and Pair with WiFi displays and Bluetooth devices.
     "UnistackSvcGroup"                         #hidden services that apparently register and start a subprocess per user as a service
     "UnistoreSvc"                              #hidden services that apparently register and start a subprocess per user as a service
-    "BluetoothUserService"                     #hidden services that apparently register and start a subprocess per user as a service
-    "CDPUserSvc"                               #hidden services that apparently register and start a subprocess per user as a service
-    "CaptureService"                           #hidden services that apparently register and start a subprocess per user as a service
-    "DevicePickerUserSvc"                      #hidden services that apparently register and start a subprocess per user as a service
-    "DevicesFlowUserSvc"                       #hidden services that apparently register and start a subprocess per user as a service
-    "MessagingService"                         #hidden services that apparently register and start a subprocess per user as a service
-    "PimIndexMaintenanceSvc"                   #hidden services that apparently register and start a subprocess per user as a service
-    "BcastDVRUserService"                      #hidden services that apparently register and start a subprocess per user as a service
-    "PrintWorkflowUserSvc"                     #hidden services that apparently register and start a subprocess per user as a service
-    "UserDataSvc"                              #hidden services that apparently register and start a subprocess per user as a service
-    "OneSyncSvc"                               #hidden services that apparently register and start a subprocess per user as a service
-    "WpnUserService"                           #hidden services that apparently register and start a subprocess per user as a service
+    #"BluetoothUserService"                    #The Bluetooth user service supports proper functionality of Bluetooth features relevant to each user session.
+    #"CDPUserSvc"                              #This user service is used for Connected Devices Platform scenarios.
+    #"CaptureService"                          #Enables optional screen capture functionality for applications that call the Windows.Graphics.Capture API.
+    #"DevicePickerUserSvc"                     #This user service is used for managing the Miracast, DLNA, and DIAL UI.
+    "MessagingService"                         #Service supporting text messaging and related functionality.
+    "PimIndexMaintenanceSvc"                   #Indexes contact data for fast contact searching.
+    #"BcastDVRUserService"                     #Keep enabled for Game Recordings and Live Broadcasts.
+    #"PrintWorkflowUserSvc"                    #Support for Print Workflow applications. If turn off this service, you may not be able to print successfully.
+    #"UserDataSvc"                             #Provides apps access to structured user data, including contact info, calendars, messages, and other content.
+    #"OneSyncSvc"                              #This service synchronizes mail, contacts, calendar and various other user data.
+    #"WpnUserService"                          #This service hosts Windows notification platform which provides support for local and push notifications.
 )
 
 foreach ($service in $services) {
