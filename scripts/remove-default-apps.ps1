@@ -11,7 +11,7 @@ do {} until (Elevate-Privileges SeTakeOwnershipPrivilege)
 Write-Output "Uninstalling default apps"
 $apps = @(
     # default Windows 10 apps
-    "Microsoft.PPIProjection"
+    #"Microsoft.PPIProjection"
     "Microsoft.3DBuilder"
     "Microsoft.Appconnector"
     "Microsoft.BingFinance"
@@ -20,16 +20,15 @@ $apps = @(
     "Microsoft.BingTranslator"
     "Microsoft.BingWeather"
     #"Microsoft.FreshPaint"
-    "Microsoft.GamingServices"
+    #"Microsoft.GamingServices"
     "Microsoft.Microsoft3DViewer"
-    "Microsoft.MicrosoftOfficeHub"
+    #"Microsoft.MicrosoftOfficeHub"
     "Microsoft.MicrosoftPowerBIForWindows"
     "Microsoft.MicrosoftSolitaireCollection"
-    "Microsoft.MicrosoftStickyNotes"
+    #"Microsoft.MicrosoftStickyNotes"
     "Microsoft.MinecraftUWP"
     "Microsoft.NetworkSpeedTest"
     "Microsoft.Office.OneNote"
-    "Microsoft.OneConnect"
     "Microsoft.People"
     "Microsoft.Print3D"
     "Microsoft.SkypeApp"
@@ -42,12 +41,12 @@ $apps = @(
     "Microsoft.WindowsMaps"
     "Microsoft.WindowsPhone"
     "Microsoft.WindowsSoundRecorder"
-    "Microsoft.WindowsStore"   # can't be re-installed
-    "Microsoft.Xbox.TCUI"
-    "Microsoft.XboxApp"
-    "Microsoft.XboxGameOverlay"
-    "Microsoft.XboxGamingOverlay"
-    "Microsoft.XboxSpeechToTextOverlay"
+    #"Microsoft.WindowsStore"   # can't be re-installed
+    #"Microsoft.Xbox.TCUI"
+    #"Microsoft.XboxApp"
+    #"Microsoft.XboxGameOverlay"
+    #"Microsoft.XboxGamingOverlay"
+    #"Microsoft.XboxSpeechToTextOverlay"
     "Microsoft.YourPhone"
     "Microsoft.ZuneMusic"
     "Microsoft.ZuneVideo"
@@ -75,7 +74,7 @@ $apps = @(
     # Redstone 5 apps
     "Microsoft.MixedReality.Portal"
     "Microsoft.ScreenSketch"
-    "Microsoft.XboxGamingOverlay"
+    #"Microsoft.XboxGamingOverlay"
     "Microsoft.YourPhone"
 
     # non-Microsoft
@@ -103,7 +102,6 @@ $apps = @(
     "Flipboard.Flipboard"
     "GAMELOFTSA.Asphalt8Airborne"
     "KeeperSecurityInc.Keeper"
-    "Microsoft.BingNews"
     "NORDCURRENT.COOKINGFEVER"
     "PandoraMediaInc.29680B314EFC2"
     "Playtika.CaesarsSlotsFreeCasino"
@@ -122,14 +120,14 @@ $apps = @(
     "king.com.CandyCrushSodaSaga"
 
     # apps which cannot be removed using Remove-AppxPackage
-    "Microsoft.BioEnrollment"
-    "Microsoft.MicrosoftEdge"
-    "Microsoft.MicrosoftEdgeDevToolsClient"
+    #"Microsoft.BioEnrollment"
+    #"Microsoft.MicrosoftEdge"
+    #"Microsoft.MicrosoftEdgeDevToolsClient"
     #"Microsoft.Windows.Cortana"
-    "Microsoft.WindowsFeedback"
+    #"Microsoft.WindowsFeedback"
     #"Microsoft.XboxGameCallableUI"
     #"Microsoft.XboxIdentityProvider"
-    "Windows.ContactSupport"
+    #"Windows.ContactSupport"
 
     # apps which other apps depend on
     "Microsoft.Advertising.Xaml"
