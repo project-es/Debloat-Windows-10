@@ -22,7 +22,7 @@ $apps = @(
     #"Microsoft.FreshPaint"
     #"Microsoft.GamingServices"
     "Microsoft.Microsoft3DViewer"
-    #"Microsoft.MicrosoftOfficeHub"
+    "Microsoft.MicrosoftOfficeHub"
     "Microsoft.MicrosoftPowerBIForWindows"
     "Microsoft.MicrosoftSolitaireCollection"
     #"Microsoft.MicrosoftStickyNotes"
