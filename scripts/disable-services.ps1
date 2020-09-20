@@ -15,8 +15,8 @@ $services = @(
     # Windows service for application access to downloaded maps, disabling this service will prevent apps from accessing maps.
     "MapsBroker"                               # Downloaded Maps Manager
     # Keep enabled for remote access, configuring a VPN, accessing your files via VPN, etc.
-    "RemoteAccess"                             # Routing and Remote Access
-    "RemoteRegistry"                           # Remote Registry
+    #"RemoteAccess"                             # Routing and Remote Access
+    #"RemoteRegistry"                           # Remote Registry
     # Keep these two enabled to share your Internet connection to other devices.
     "SharedAccess"                             # Internet Connection Sharing (ICS)
     "icssvc"                                   # Windows Mobile Hotspot Service
